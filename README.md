@@ -2,6 +2,10 @@
 
 A sophisticated note-taking application built with React JS, featuring modern design, responsive layout, and advanced React concepts.
 
+## 🌐 Live Demo
+
+**[View Live App](https://keeperappass10.netlify.app/)**
+
 ## 🚀 Features
 
 - **Modern UI/UX**: Beautiful, responsive design using Bootstrap 5
