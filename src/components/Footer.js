@@ -42,13 +42,13 @@ const Footer = () => {
             
             <div className="text-center md:text-right">
               <div className="flex justify-center md:justify-end gap-3 mb-2">
-                <a href="#" className="social-link w-9 h-9 rounded-full text-white flex items-center justify-center text-sm">
+                <a href="https://github.com" className="social-link w-9 h-9 rounded-full text-white flex items-center justify-center text-sm">
                   <i className="fab fa-github"></i>
                 </a>
-                <a href="#" className="social-link w-9 h-9 rounded-full text-white flex items-center justify-center text-sm">
+                <a href="https://linkedin.com" className="social-link w-9 h-9 rounded-full text-white flex items-center justify-center text-sm">
                   <i className="fab fa-linkedin"></i>
                 </a>
-                <a href="#" className="social-link w-9 h-9 rounded-full text-white flex items-center justify-center text-sm">
+                <a href="https://twitter.com" className="social-link w-9 h-9 rounded-full text-white flex items-center justify-center text-sm">
                   <i className="fab fa-twitter"></i>
                 </a>
               </div>
