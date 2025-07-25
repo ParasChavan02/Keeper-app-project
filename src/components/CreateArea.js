@@ -62,29 +62,45 @@ const CreateArea = ({ onAdd }) => {
               />
             </div>
             
-            {isExpanded && (
-              <div className="flex flex-col sm:flex-row justify-between items-center gap-4 animate-fade-in-up">
-                <button
-                  type="button"
-                  className="px-4 py-2 text-sm border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 transition-colors duration-300 flex items-center gap-2"
-                  onClick={() => {
-                    setIsExpanded(false);
-                    setNote({ title: '', content: '' });
-                  }}
-                >
-                  <i className="fas fa-times"></i>
-                  Cancel
-                </button>
-                
-                <button
-                  type="submit"
-                  className="btn-gradient text-white px-6 py-3 rounded-full font-semibold shadow-custom flex items-center gap-2 text-sm sm:text-base"
-                >
-                  <i className="fas fa-plus"></i>
-                  Add Note
-                </button>
-              </div>
-            )}
+            {/* Always show buttons, but with different styles based on expanded state */}
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+              {isExpanded ? (
+                // Expanded state: show both cancel and add buttons
+                <>
+                  <button
+                    type="button"
+                    className="px-4 py-2 text-sm border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 transition-colors duration-300 flex items-center gap-2"
+                    onClick={() => {
+                      setIsExpanded(false);
+                      setNote({ title: '', content: '' });
+                    }}
+                  >
+                    <i className="fas fa-times"></i>
+                    Cancel
+                  </button>
+                  
+                  <button
+                    type="submit"
+                    className="btn-gradient text-white px-6 py-3 rounded-full font-semibold shadow-custom flex items-center gap-2 text-sm sm:text-base animate-fade-in-up"
+                  >
+                    <i className="fas fa-plus"></i>
+                    Add Note
+                  </button>
+                </>
+              ) : (
+                // Collapsed state: show a prominent add button that expands the form
+                <div className="w-full flex justify-end">
+                  <button
+                    type="button"
+                    onClick={expand}
+                    className="btn-gradient text-white px-6 py-3 rounded-full font-semibold shadow-custom flex items-center gap-2 text-sm sm:text-base hover:scale-105 transition-transform"
+                  >
+                    <i className="fas fa-plus"></i>
+                    Add Note
+                  </button>
+                </div>
+              )}
+            </div>
           </form>
         </div>
       </div>
