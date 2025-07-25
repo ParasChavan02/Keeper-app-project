@@ -63,13 +63,13 @@ const CreateArea = ({ onAdd }) => {
             </div>
             
             {/* Always show buttons, but with different styles based on expanded state */}
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 w-full">
+            <div className="flex justify-between items-center gap-4 mt-4">
               {isExpanded ? (
                 // Expanded state: show both cancel and add buttons
                 <>
                   <button
                     type="button"
-                    className="px-4 py-2 text-sm border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 transition-colors duration-300 flex items-center gap-2 order-2 sm:order-1"
+                    className="px-4 py-2 text-sm border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 transition-colors duration-300 flex items-center gap-2"
                     onClick={() => {
                       setIsExpanded(false);
                       setNote({ title: '', content: '' });
@@ -81,7 +81,8 @@ const CreateArea = ({ onAdd }) => {
                   
                   <button
                     type="submit"
-                    className="btn-gradient text-white px-6 py-3 rounded-full font-semibold shadow-lg flex items-center gap-2 text-sm sm:text-base animate-fade-in-up order-1 sm:order-2 w-full sm:w-auto justify-center"
+                    className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transition-colors"
+                    style={{ backgroundColor: '#667eea' }}
                   >
                     <i className="fas fa-plus"></i>
                     Add Note
@@ -93,7 +94,8 @@ const CreateArea = ({ onAdd }) => {
                   <button
                     type="button"
                     onClick={expand}
-                    className="btn-gradient text-white px-6 py-3 rounded-full font-semibold shadow-lg flex items-center gap-2 text-sm sm:text-base hover:scale-105 transition-transform"
+                    className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transition-colors"
+                    style={{ backgroundColor: '#667eea' }}
                   >
                     <i className="fas fa-plus"></i>
                     Add Note
