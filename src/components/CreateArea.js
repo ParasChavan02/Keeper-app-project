@@ -81,8 +81,7 @@ const CreateArea = ({ onAdd }) => {
                   
                   <button
                     type="submit"
-                    className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transition-colors"
-                    style={{ backgroundColor: '#667eea' }}
+                    className="btn-gradient text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transition-colors"
                   >
                     <i className="fas fa-plus"></i>
                     Add Note
@@ -94,8 +93,7 @@ const CreateArea = ({ onAdd }) => {
                   <button
                     type="button"
                     onClick={expand}
-                    className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transition-colors"
-                    style={{ backgroundColor: '#667eea' }}
+                    className="btn-gradient text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 transition-colors"
                   >
                     <i className="fas fa-plus"></i>
                     Add Note
