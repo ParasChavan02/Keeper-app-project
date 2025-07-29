@@ -6,6 +6,7 @@ const CreateArea = ({ onAdd }) => {
     content: ''
   });
   const [isExpanded, setIsExpanded] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -13,20 +14,27 @@ const CreateArea = ({ onAdd }) => {
       ...prevNote,
       [name]: value
     }));
+    setError(''); // Clear error on change
   };
 
   const submitNote = (event) => {
     event.preventDefault();
+    if (!note.title.trim() || !note.content.trim()) {
+      setError('Both title and content are required.');
+      return;
+    }
     onAdd(note);
     setNote({
       title: '',
       content: ''
     });
     setIsExpanded(false);
+    setError('');
   };
 
   const expand = () => {
     setIsExpanded(true);
+    setError('');
   };
 
   return (
@@ -36,7 +44,10 @@ const CreateArea = ({ onAdd }) => {
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-accent-400"></div>
         
         <div className="p-6">
-          <form onSubmit={submitNote}>
+          <form onSubmit={submitNote} noValidate>
+            {error && (
+              <div className="mb-2 text-red-600 text-sm animate-fade-in-up">{error}</div>
+            )}
             {isExpanded && (
               <div className="mb-4 animate-fade-in-up">
                 <input
